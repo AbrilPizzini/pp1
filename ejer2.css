@@ -1,0 +1,11 @@
+.error {
+
+    color:red;
+    font-weight: bold;
+    border-width: 2px;
+    border-color: black;
+    border-style: solid;
+    padding: 10px;
+   
+
+}
