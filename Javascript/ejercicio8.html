@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        //document.addEventListener("DOMContenetLoaded", function(){
+            //document.getElementById("formulario").addEventListener('submit', validarFormulario);
+        //});
+
+        function validarFormulario(){
+
+            validarNombre();
+            validarEmail();
+            validarComentarios();
+        }
+
+        function validarNombre(){
+
+            let nombre = document.getElementById("name").value;
+            if (nombre.length == 0) {
+                alert("Nombre es un campo requerido");
+                return;
+            }
+
+        }
+
+        function validarEmail(){
+
+            let email = document.getElementById("email").value;
+            if (email.length == 0) {
+                alert("Email es un campo requerido");
+                return;
+            }
+
+        }
+
+        function validarComentarios(){
+
+            let comentarios = document.getElementById("comentarios").value;
+            if (comentarios.length > 50) {
+                alert("Comentarios debe ser menor a 50");
+                return;
+            }
+            if (comentarios.length == 0) {
+                alert("Comentarios es un campo requerido");
+                return;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <form id="formulario">
+        <div>
+            <p>
+            Nombre:  <input value="" type="" id="name" onblur="validarNombre()">
+            </p>
+        </div>
+        <div>
+            <p>
+            Email:  <input value="" type="email" id="email" onblur="validarEmail()">
+            </p>
+        </div>
+        <div>
+            <p>
+            Comentarios: <input value="" type="comentarios" id="comentarios" onblur="validarComentarios()">
+            </p>
+        </div>
+
+        <div>
+            <input type="submit" value="Entrar" onclick="validarFormulario()">
+        </div>
+    </form>
+
+
+</body>
+</html>

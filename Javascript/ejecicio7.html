@@ -23,20 +23,35 @@
     </style>
     <script type="text/javascript">
         function showEvent(event){
-        console.log(event);
+
+        document.getElementById("ratonInterno").innerHTML = `Navegador [${event.clientX}, ${event.clientY}]`;
+        document.getElementById("ratonInterno2").innerHTML = `Pagina [${event.screenX}, ${event.screenY}]`;
+         
+
+        }
+
+        function showKey(event){
+
+            
+            document.getElementById("tecladoInterno").innerHTML = `Carácter [${event.key}]`;
+            document.getElementById("tecladoInterno2").innerHTML = `Código [${event.charCode}]`;
+
         }
         </script>
         
 </head>
     
-<body onmousemove="showEvent(event)">
+<body onmousemove="showEvent(event);" onkeypress="showKey(event);">
     <div id="raton" class="box">
-        <h1 onclick="showEvent(event)">Ratón</h1>
-        <div></div>
+        <h1 >Ratón</h1>
+        <!--onclick="showEvent(event)"-->
+        <div id="ratonInterno"></div>
+        <div id="ratonInterno2"></div>
     </div>
     <div id="teclado" class="box">
         <h1>Teclado</h1>
-        <div></div>
+        <div id="tecladoInterno"></div>
+        <div id="tecladoInterno2"></div>
     </div>
     <script type="text/javascript" src="js/main.js"></script>
 </body>
