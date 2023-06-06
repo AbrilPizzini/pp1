@@ -22,7 +22,7 @@
 
         }
 
-        function add($celda){
+        function add(Celda $celda){
 
             
             $this -> celdas[] = $celda;
@@ -31,11 +31,14 @@
 
         function mostrarCeldas(){
 
+            echo '<table>';
             foreach($celdas as $key => $celda){
-
+                echo '<tr>';
                 echo "Celda numero: " . $this -> celdas[$key];
+                echo '</tr>';
             }
 
+            echo '</table>';
 
         }
 
@@ -56,6 +59,15 @@
 
         }
 
+        function getNroCelda(){
+
+            return $this -> nroCelda;
+        }
+
+        function getValorCelda(){
+
+            return $this -> valorCelda;
+        }
 
 
     }
