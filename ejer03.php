@@ -1,31 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <?php
+<?php
 
-        $pais = [
-            "espana" =>
-                    [
-                        "nombre" => "España",
-                        "lengua" => "Castellano",
-                        "moneda" => "Peseta"
-                    ],
-            "francia" =>
-                    [
-                        "nombre" => "Francia",
-                        "lengua" => "Francés",
-                        "moneda" => "Franco"
-                    ]
-        ];
+require_once './vendor/autoload.php';
 
-    echo $pais["espana"]["moneda"] //Saca en pantalla: "Peseta"
-     
+$loader = new \Twig\Loader\FilesystemLoader('./templates');
+$twig = new \Twig\Environment($loader);
+$pais = array (
+    "rusia" => array(
+        "nombre" => "Rusia"
+    ),
+    "francia" => array (
+        "nombre" => "Francia"
+    ),
+    "argentina"=> array (
+        "nombre" => "Argentina"
+    ),
+    "uruguay" => array (
+        "nombre" => "Uruguay"
+    ),
+    "paraguay" => array (
+        "nombre" => "Paraguay"
+    )
+    );
+
+    echo $twig->render('ejer03.html.twig', ['pais' => $pais]);
+
+
+
+
+
 ?>
-</body>
-</html>
